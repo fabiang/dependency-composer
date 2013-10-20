@@ -1,0 +1,10 @@
+#!/usr/bin/env php
+<?php
+namespace Fabiang\DependencyComposer;
+
+(@include __DIR__ . '/../vendor/autoload.php')
+    OR fwrite(STDERR, 'ERROR: Composer not properly set up! Run "composer install" or see README.md for more details' . PHP_EOL)
+    AND exit(1);
+
+$application = new Application;
+$application->run();

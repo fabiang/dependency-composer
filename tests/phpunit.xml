@@ -1,0 +1,16 @@
+<phpunit bootstrap="./bootstrap.php"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         forceCoversAnnotation="true"
+         strict="true"
+         verbose="true">
+
+    <testsuites>
+        <testsuite name="DependencyComposer">
+            <directory>src/Fabiang/DependencyComposer</directory>
+        </testsuite>
+    </testsuites>
+
+</phpunit>
