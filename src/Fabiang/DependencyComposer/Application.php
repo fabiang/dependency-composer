@@ -44,8 +44,11 @@ use Symfony\Component\Console\Application as BaseApplication;
  */
 class Application extends BaseApplication
 {
+    /**
+     * Init proejct name.
+     */
     public function __construct()
     {
-        parent::__construct('graph-composer', '@git_tag@');
+        parent::__construct('dependency-composer', '@git_tag@');
     }
 }
