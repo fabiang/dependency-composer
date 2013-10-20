@@ -34,71 +34,13 @@
  * @link      http://github.com/fabiang/dependency-composer
  */
 
-namespace Fabiang;
-use Fabiang\DependencyComposer\Exception\InvalidArgumentException;
+namespace Fabiang\DependencyComposer\Exception;
 
 /**
- * DependencyComposer main class.
+ * Genertic exception interface for DependencyComposer
  * 
- * @package DependencyComposer
+ * @package DependencyComposer\Exception
  */
-class DependencyComposer
+interface ExceptionInterface
 {
-    const COMPOSER_LOCK = 'composer.lock';
-    
-    /**
-     * Composer lock file.
-     * 
-     * @var string
-     */
-    protected $composerLock = '';
-    
-    /**
-     * Constructor takes a path to composer.lock.
-     * 
-     * @param string $composerLock
-     * 
-     * @throws InvalidArgumentException
-     */
-    public function __construct($composerLock)
-    {        
-        $this->setComposerLock($composerLock);
-    }
-    
-    /**
-     * Get path to composer.lock.
-     * 
-     * @return string
-     */
-    public function getComposerLock()
-    {
-        return $this->composerLock;
-    }
-
-    /**
-     * Set path to composer.lock.
-     * 
-     * @param string $composerLock
-     * 
-     * @return \Fabiang\DependencyComposer
-     * @throws InvalidArgumentException
-     */
-    public function setComposerLock($composerLock)
-    {       
-        if (is_dir($composerLock)) {
-            // noramlize path
-            $composerLock = rtrim($composerLock, '/') . '/'
-                . static::COMPOSER_LOCK;
-        }
-        
-        if (!is_file($composerLock)) {
-            throw new InvalidArgumentException(
-                '"composer.lock" could not be found in given path "'
-                . dirname($composerLock) . '"'
-            );
-        }
-        
-        $this->composerLock = $composerLock;
-        return $this;
-    }
 }

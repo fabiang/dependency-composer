@@ -33,4 +33,7 @@
  * @license   BSD
  * @link      http://github.com/fabiang/dependency-composer
  */
-$app = require __DIR__ . '/../vendor/autoload.php';
+
+/* @var $autoloader \Composer\Autoload\ClassLoader */
+$autoloader = $app = require __DIR__ . '/../vendor/autoload.php';
+$autoloader->add('Fabiang\\', __DIR__ . '/src/');

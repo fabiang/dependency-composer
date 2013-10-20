@@ -38,7 +38,7 @@ namespace Fabiang\DependencyComposer;
 use Symfony\Component\Console\Application as BaseApplication;
 
 /**
- * DependencyComposer main class.
+ * DependencyComposer application class.
  * 
  * @package DependencyComposer\Application
  */
